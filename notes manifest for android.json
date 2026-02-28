@@ -3,9 +3,16 @@
   "dir": "ltr",
   "display": "standalone",
   "name": "My Notes",
-  "orientation": "any",
-  "scope": "/",
+  "orientation": "portrait",
+  "scope": "/Notesappforandroid/",
   "short_name": "My Notes",
-  "start_url": "/",
-  "theme_color": "#ffffff"
+  "start_url": "/Notesappforandroid/",
+  "theme_color": "#00BCD4",
+  "icons": [
+    {
+      "src": "notes-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
 }
