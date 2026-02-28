@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "My Notes",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "My Notes",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}
