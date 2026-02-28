@@ -8,11 +8,12 @@
   "short_name": "My Notes",
   "start_url": "/Notesappforandroid/",
   "theme_color": "#00BCD4",
-  "icons": [
-    {
-      "src": "notes-icon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml"
+"icons": [
+  {
+    "src": "notes-icon.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any"
     }
   ]
 }
