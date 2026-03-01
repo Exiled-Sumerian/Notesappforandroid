@@ -340,8 +340,8 @@
   .screen.visible { transform: translateX(0); }
 
   .editor-topbar {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: var(--teal);
+    border-bottom: none;
     padding: 0 8px;
     display: flex;
     align-items: center;
@@ -357,12 +357,12 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: var(--text);
+    color: white;
     background: transparent;
     padding: 0 8px;
     letter-spacing: -0.2px;
   }
-  .editor-title-input::placeholder { color: var(--text3); }
+  .editor-title-input::placeholder { color: rgba(255,255,255,0.6); }
 
   .editor-toolbar {
     background: var(--surface2);
@@ -733,10 +733,11 @@
 
 <!-- EDITOR SCREEN -->
 <div class="screen" id="editorScreen">
+  <div style="background:#00BCD4;padding:28px 16px 0 16px;font-size:12px;color:#00BCD4;user-select:none;">phillip is cool</div>
   <div class="editor-topbar">
     <button class="topbar-btn" id="editorBack">←</button>
     <input class="editor-title-input" id="editorTitle" placeholder="Title">
-    <button class="topbar-btn" id="editorSave" style="color:var(--accent);font-size:14px;font-weight:600;width:auto;padding:0 8px;border-radius:8px;">Save</button>
+    <button class="topbar-btn" id="editorSave" style="color:white;font-size:14px;font-weight:600;width:auto;padding:0 8px;border-radius:8px;">Save</button>
     <button class="topbar-btn" id="editorMore">⋮</button>
   </div>
   <div class="folder-picker">
@@ -943,7 +944,18 @@ function closeEditor() {
   document.getElementById('fabMenu').classList.remove('open');
 }
 
-document.getElementById('editorBack').onclick = closeEditor;
+document.getElementById('editorBack').onclick = () => {
+  const title = document.getElementById('editorTitle').value.trim();
+  const body = document.getElementById('editorBody');
+  const hasContent = title || body.querySelector('[contenteditable]')?.innerText.trim() || 
+    body.querySelector('#checkList')?.querySelectorAll('.check-input').length ||
+    body.querySelector('#drawCanvas');
+  if (hasContent) {
+    saveNote();
+  } else {
+    closeEditor();
+  }
+};
 
 // ===== BUILD EDITOR =====
 function buildEditor(type, note) {
