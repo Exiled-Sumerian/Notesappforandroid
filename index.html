@@ -53,8 +53,7 @@
   }
   .bottom-bar {
     background: var(--teal);
-    height: 52px;
-    padding-bottom: env(safe-area-inset-bottom, 16px);
+    height: max(env(safe-area-inset-bottom, 0px), 52px);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -65,7 +64,7 @@
   .topbar {
     background: var(--teal);
     border-bottom: none;
-    padding-top: env(safe-area-inset-top, 24px);
+    padding-top: max(env(safe-area-inset-top, 0px), 32px);
     padding: 0 16px;
     display: flex;
     align-items: center;
